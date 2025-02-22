@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 6000; // Use a different port if needed
 dbConnect(process.env.DBURL,process.env.DBNAME)
 
 // middleware
-app.use(cors())
+app.use(cors());
 
 app.use('/product',productRoute)
 
