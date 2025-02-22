@@ -1,4 +1,5 @@
 import express from "express";
+import cors from 'cors'
 import productRoute from "./routes/productRoute.js";
 const app = express();
 
@@ -12,6 +13,9 @@ const PORT = process.env.PORT || 6000; // Use a different port if needed
 
 //for establishing connection with DB
 dbConnect(process.env.DBURL,process.env.DBNAME)
+
+// middleware
+app.use(cors())
 
 app.use('/product',productRoute)
 
