@@ -17,6 +17,12 @@ dbConnect(process.env.DBURL,process.env.DBNAME)
 // middleware
 app.use(cors());
 
+//it parse provided data
+app.use(express.json());
+
+// Serve uploaded images
+app.use("/uploads", express.static("uploads")); 
+
 app.use('/product',productRoute)
 
 app.listen(PORT, () => {
